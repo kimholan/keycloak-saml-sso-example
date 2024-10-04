@@ -31,6 +31,24 @@
     <h3>Service Provider App</h3>
 </div>
 
+<!--<div class="row">-->
+<!--    <div class="col-12 auth-container" style="text-align: center;">-->
+<!--        <p style="font-weight: bold;">Authentication Tester</p>-->
+<!--        <div class="loader">-->
+<!--            <p style="font-weight: normal;">Checking for session...</p>-->
+<!--            <img src="./sp/loader.gif" alt="Loader" style="width: 2%;">-->
+<!--        </div>-->
+<!--        <div class="editor" style="width: 90%; overflow-wrap: break-word; margin: 0 auto; display: none">-->
+<!--            <p style="font-weight: bold;">Auth Token</p>-->
+<!--            <p id="token"></p>-->
+<!--            <div style="display: flex; justify-content: center; gap: 10px;">-->
+<!--                <input id="idp-btn" type="button" value="Open Identity Provider App"/>-->
+<!--                <input id="btn-logout" type="button" value="Logout"/>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
 <div class="row">
     <div class="col-12 auth-container" style="text-align: center;">
         <p style="font-weight: bold;">Authentication Tester</p>
@@ -38,9 +56,9 @@
             <p style="font-weight: normal;">Checking for session...</p>
             <img src="./sp/loader.gif" alt="Loader" style="width: 2%;">
         </div>
-        <div class="editor" style="width: 90%; overflow-wrap: break-word; margin: 0 auto; display: none">
-            <p style="font-weight: bold;">Auth Token</p>
-            <p id="token"></p>
+        <div class="editor" style="width: 20%; overflow-wrap: break-word; margin: 0 auto; display: none">
+            <p style="font-weight: bold; font-size: 13px">Received the <a href="https://jwt.io/">JWT</a></p>
+            <pre id="token" style="text-align: left; font-size: 12px;"></pre>
             <div style="display: flex; justify-content: center; gap: 10px;">
                 <input id="idp-btn" type="button" value="Open Identity Provider App"/>
                 <input id="btn-logout" type="button" value="Logout"/>
@@ -48,5 +66,6 @@
         </div>
     </div>
 </div>
+
 </body>
 </html>

@@ -1,4 +1,4 @@
-// noinspection JSJQueryEfficiency,JSUnresolvedReference
+// noinspection JSJQueryEfficiency,JSUnresolvedReference,DuplicatedCode
 
 function getKCHost() {
     let baseURL = "http://localhost/idp-auth";
@@ -28,7 +28,9 @@ function kcAuth(kcBaseURL) {
             console.log("Authenticated.");
             console.log(keycloak);
             window.keycloak = keycloak;
-            $('#token').html(keycloak.token);
+            // $('#token').html(keycloak.token);
+            const payload = parseJWT(keycloak.token);
+            $('#token').html(JSON.stringify(payload, null, 2)); // The '2' specifies a 2-space indentation
             $('.editor').show();
             $('.loader').hide();
         } else {
@@ -52,3 +54,18 @@ $(document).ready(function () {
         window.location.href = "http://localhost/idp-auth/realms/my-idp/protocol/openid-connect/logout";
     });
 })
+
+
+function parseJWT(token) {
+    if (!token) {
+        throw new Error("Token is required");
+    }
+    const parts = token.split('.');
+    if (parts.length !== 3) {
+        throw new Error("Invalid JWT format");
+    }
+    const payload = parts[1];
+    // Decode the payload from Base64Url
+    const decodedPayload = JSON.parse(atob(payload.replace(/-/g, '+').replace(/_/g, '/')));
+    return decodedPayload;
+}
