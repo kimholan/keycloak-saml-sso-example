@@ -101,4 +101,4 @@ credentials, enhancing both user experience and security.
 ## Improvements
 
 - [ ] Redirections to specific URLs using `RelayState`
-- [ ] Mapping custom attributes from IdP into SP (for example, IdP could pass a `tenant-id` as a custom param to SP and the SP user needs to get mapped into the specified tenant ID)
+- [x] Mapping custom attributes from IdP into SP (for example, IdP could pass a `tenant-id` as a custom param to SP and the SP user needs to get mapped into the specified tenant ID)
