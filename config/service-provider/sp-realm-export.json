@@ -383,13 +383,13 @@
     {
       "id": "597b3309-acad-49dc-80d5-4b87c122cd55",
       "createdTimestamp": 1701845511432,
-      "username": "test",
+      "username": "spuser",
       "enabled": true,
       "totp": false,
       "emailVerified": true,
-      "firstName": "Test",
+      "firstName": "SP",
       "lastName": "User",
-      "email": "test@gmail.com",
+      "email": "spuser@email.com",
       "credentials": [
         {
           "id": "c126e156-4aad-4dbe-a8c4-7f006f252cb0",
@@ -656,7 +656,8 @@
         "acr",
         "roles",
         "profile",
-        "email"
+        "email",
+        "tenant"
       ],
       "optionalClientScopes": [
         "address",
@@ -718,7 +719,8 @@
       "fullScopeAllowed": true,
       "nodeReRegistrationTimeout": -1,
       "defaultClientScopes": [
-        "role_list"
+        "role_list",
+        "tenant-saml"
       ],
       "optionalClientScopes": [],
       "access": {
@@ -1318,6 +1320,61 @@
           }
         }
       ]
+    },
+    {
+      "id": "c182057f-1aa0-42ab-8065-db532925281b",
+      "name": "tenant",
+      "description": "Tenant ID or Name",
+      "protocol": "openid-connect",
+      "attributes": {
+        "include.in.token.scope": "true",
+        "display.on.consent.screen": "false"
+      },
+      "protocolMappers": [
+        {
+          "id": "3bb3082c-5127-4bf4-b0f8-b21d2be5fe58",
+          "name": "tenant",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-usermodel-attribute-mapper",
+          "consentRequired": false,
+          "config": {
+            "introspection.token.claim": "true",
+            "userinfo.token.claim": "true",
+            "user.attribute": "tenant",
+            "id.token.claim": "true",
+            "access.token.claim": "true",
+            "claim.name": "tenant",
+            "jsonType.label": "String"
+          }
+        }
+      ]
+    },
+    {
+      "id": "c182057f-1aa0-42ab-8065-db533025281b",
+      "name": "tenant-saml",
+      "description": "Tenant ID or Name",
+      "protocol": "saml",
+      "attributes": {
+        "include.in.token.scope": "true",
+        "display.on.consent.screen": "false",
+        "gui.order": "",
+        "consent.screen.text": ""
+      },
+      "protocolMappers": [
+        {
+          "id": "a43b3575-7f8a-4f85-9248-b7ec49dd8619",
+          "name": "tenant",
+          "protocol": "saml",
+          "protocolMapper": "saml-user-attribute-mapper",
+          "consentRequired": false,
+          "config": {
+            "user.attribute": "tenant",
+            "attribute.nameformat": "Basic",
+            "friendly.name": "tenant",
+            "attribute.name": "tenant"
+          }
+        }
+      ]
     }
   ],
   "defaultDefaultClientScopes": [
@@ -1392,7 +1449,21 @@
       "providerId": "saml"
     }
   ],
-  "identityProviderMappers": [],
+  "identityProviderMappers": [
+    {
+      "id": "6f373828-323a-482a-85bc-fc826dab40aa",
+      "name": "tenant",
+      "identityProviderAlias": "idp-saml",
+      "identityProviderMapper": "saml-user-attribute-idp-mapper",
+      "config": {
+        "syncMode": "INHERIT",
+        "attribute.name": "tenant",
+        "attribute.friendly.name": "tenant",
+        "attribute.name.format": "ATTRIBUTE_FORMAT_BASIC",
+        "user.attribute": "tenant"
+      }
+    }
+  ],
   "components": {
     "org.keycloak.services.clientregistration.policy.ClientRegistrationPolicy": [
       {

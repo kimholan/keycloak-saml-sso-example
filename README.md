@@ -74,7 +74,7 @@ credentials, enhancing both user experience and security.
 
 - Open http://localhost/idp
 - Click 'Open SP App'
-- U: `test`, P: `test`
+- U: `idpuser`, P: `test`
 - Click Sign in
 - You are now logged into both apps
 
@@ -82,7 +82,7 @@ credentials, enhancing both user experience and security.
 
 - Open http://localhost/sp
 - Click on 'SSO with IdP via SAML'
-- U: `test`, P: `test`
+- U: `idpuser`, P: `test`
 - Click Sign in
 - You are now logged into both apps
 
@@ -100,5 +100,5 @@ credentials, enhancing both user experience and security.
 
 ## Improvements
 
-- Redirections to specific URLs using `RelayState`
-- Mapping custom attributes from IdP into SP (for example, IdP could pass a `tenant-id` as a custom param to SP and the SP user needs to get mapped into the specified tenant ID)
+- [ ] Redirections to specific URLs using `RelayState`
+- [ ] Mapping custom attributes from IdP into SP (for example, IdP could pass a `tenant-id` as a custom param to SP and the SP user needs to get mapped into the specified tenant ID)
