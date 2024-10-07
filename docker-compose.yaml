@@ -85,5 +85,16 @@ services:
       retries: 300
     restart: on-failure
 
+  # Setup a dummy SMTP Server + Web Interface for viewing and testing emails during development.
+  maildev:
+    container_name: maildev
+    image: maildev/maildev:2.1.0
+    environment:
+      - MAILDEV_BASE_PATHNAME=/mailbox
+    ports:
+      - "9060:1080"
+      - "1025:1025"
+    restart: unless-stopped
+
 volumes:
   postgres:

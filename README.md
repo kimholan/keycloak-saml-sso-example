@@ -108,3 +108,4 @@ credentials, enhancing both user experience and security.
     - [x] default attribute such as `email` from IdP into SP as username
     - [x] custom attributes from IdP into SP (for example, IdP could pass a `tenant-id` as a custom param to SP and the
       SP user needs to get mapped into the specified tenant ID)
+    - [x] map user to a group

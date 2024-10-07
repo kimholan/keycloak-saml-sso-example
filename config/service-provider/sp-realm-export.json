@@ -35,7 +35,7 @@
   "verifyEmail": false,
   "loginWithEmailAllowed": true,
   "duplicateEmailsAllowed": false,
-  "resetPasswordAllowed": false,
+  "resetPasswordAllowed": true,
   "editUsernameAllowed": false,
   "bruteForceProtected": false,
   "permanentLockout": false,
@@ -328,7 +328,21 @@
       ]
     }
   },
-  "groups": [],
+  "groups": [
+    {
+      "id": "931c58c7-2197-4b15-998c-e1985400e485",
+      "name": "ACME Group",
+      "path": "/ACME Group",
+      "subGroupCount": 0,
+      "access": {
+        "view": true,
+        "viewMembers": true,
+        "manageMembers": true,
+        "manage": true,
+        "manageMembership": true
+      }
+    }
+  ],
   "defaultRole": {
     "id": "a6bf2344-0d50-495a-b307-db1f803ef22a",
     "name": "default-roles-master",
@@ -1401,7 +1415,18 @@
     "xXSSProtection": "1; mode=block",
     "strictTransportSecurity": "max-age=31536000; includeSubDomains"
   },
-  "smtpServer": {},
+  "smtpServer": {
+    "replyToDisplayName": "Service Provider App",
+    "starttls": "false",
+    "auth": "",
+    "port": "1025",
+    "replyTo": "no-reply@serviceprovider.org",
+    "host": "maildev",
+    "from": "no-reply@serviceprovider.org",
+    "fromDisplayName": "Service Provider App",
+    "envelopeFrom": "",
+    "ssl": "false"
+  },
   "loginTheme": "",
   "accountTheme": "",
   "adminTheme": "",
@@ -1513,6 +1538,17 @@
         "syncMode": "INHERIT",
         "template": "${ATTRIBUTE.email}",
         "target": "LOCAL"
+      }
+    },
+    {
+      "id": "03ffa68e-7832-4b2b-a653-7c49fab0101c",
+      "name": "acme-group-mapper",
+      "identityProviderAlias": "idp-saml",
+      "identityProviderMapper": "saml-advanced-group-idp-mapper",
+      "config": {
+        "syncMode": "FORCE",
+        "attributes": "[{\"key\":\"tenant\",\"value\":\"ACME Financial Guardians\"}]",
+        "group": "/ACME Group"
       }
     }
   ],
