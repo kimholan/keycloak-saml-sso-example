@@ -729,7 +729,7 @@
       "nodeReRegistrationTimeout": -1,
       "defaultClientScopes": [
         "role_list",
-        "tenant-saml",
+        "idp-tenant",
         "idp-email",
         "idp-first-name",
         "idp-last-name"
@@ -946,7 +946,7 @@
     },
     {
       "id": "c182057f-1aa0-42ab-8065-db533025281b",
-      "name": "tenant-saml",
+      "name": "idp-tenant",
       "description": "Tenant ID or Name",
       "protocol": "saml",
       "attributes": {

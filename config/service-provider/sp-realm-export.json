@@ -1454,7 +1454,7 @@
   "identityProviderMappers": [
     {
       "id": "6f373828-323a-482a-85bc-fc826dab40aa",
-      "name": "tenant",
+      "name": "idp-tenant",
       "identityProviderAlias": "idp-saml",
       "identityProviderMapper": "saml-user-attribute-idp-mapper",
       "config": {
@@ -1506,7 +1506,7 @@
     },
     {
       "id": "b7c869d5-774d-41cb-8d15-28908f17c5a2",
-      "name": "email-as-username",
+      "name": "idp-email-as-username",
       "identityProviderAlias": "idp-saml",
       "identityProviderMapper": "saml-username-idp-mapper",
       "config": {
