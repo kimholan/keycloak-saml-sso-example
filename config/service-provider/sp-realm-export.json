@@ -1416,6 +1416,8 @@
   "identityProviders": [
     {
       "alias": "idp-saml",
+      "trustEmail": true,
+      "storeToken": true,
       "config": {
         "allowCreate": "true",
         "guiOrder": "",
@@ -1461,6 +1463,56 @@
         "attribute.friendly.name": "tenant",
         "attribute.name.format": "ATTRIBUTE_FORMAT_BASIC",
         "user.attribute": "tenant"
+      }
+    },
+    {
+      "id": "7f383828-323a-482a-85bc-fc826dab40aa",
+      "name": "idp-email",
+      "identityProviderAlias": "idp-saml",
+      "identityProviderMapper": "saml-user-attribute-idp-mapper",
+      "config": {
+        "syncMode": "INHERIT",
+        "attribute.name": "idp-email",
+        "attribute.friendly.name": "email",
+        "attribute.name.format": "ATTRIBUTE_FORMAT_BASIC",
+        "user.attribute": "email"
+      }
+    },
+    {
+      "id": "1f383829-323a-482a-85bc-fc826dab40aa",
+      "name": "idp-first-name",
+      "identityProviderAlias": "idp-saml",
+      "identityProviderMapper": "saml-user-attribute-idp-mapper",
+      "config": {
+        "syncMode": "INHERIT",
+        "attribute.name": "firstName",
+        "attribute.friendly.name": "firstName",
+        "attribute.name.format": "ATTRIBUTE_FORMAT_BASIC",
+        "user.attribute": "firstName"
+      }
+    },
+    {
+      "id": "2f384839-323a-482a-85bc-fc826dab41aa",
+      "name": "idp-last-name",
+      "identityProviderAlias": "idp-saml",
+      "identityProviderMapper": "saml-user-attribute-idp-mapper",
+      "config": {
+        "syncMode": "INHERIT",
+        "attribute.name": "lastName",
+        "attribute.friendly.name": "lastName",
+        "attribute.name.format": "ATTRIBUTE_FORMAT_BASIC",
+        "user.attribute": "lastName"
+      }
+    },
+    {
+      "id": "b7c869d5-774d-41cb-8d15-28908f17c5a2",
+      "name": "email-as-username",
+      "identityProviderAlias": "idp-saml",
+      "identityProviderMapper": "saml-username-idp-mapper",
+      "config": {
+        "syncMode": "INHERIT",
+        "template": "${ATTRIBUTE.email}",
+        "target": "LOCAL"
       }
     }
   ],
@@ -2192,7 +2244,7 @@
       "id": "b84cdbcf-71b1-45a0-a97d-3e3360ab3afd",
       "alias": "review profile config",
       "config": {
-        "update.profile.on.first.login": "missing"
+        "update.profile.on.first.login": "off"
       }
     }
   ],

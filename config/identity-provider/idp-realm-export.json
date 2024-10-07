@@ -729,7 +729,10 @@
       "nodeReRegistrationTimeout": -1,
       "defaultClientScopes": [
         "role_list",
-        "tenant-saml"
+        "tenant-saml",
+        "idp-email",
+        "idp-first-name",
+        "idp-last-name"
       ],
       "optionalClientScopes": [],
       "access": {
@@ -964,6 +967,87 @@
             "attribute.nameformat": "Basic",
             "friendly.name": "tenant",
             "attribute.name": "tenant"
+          }
+        }
+      ]
+    },
+    {
+      "id": "d192057f-1aa0-42ab-8065-db533025281b",
+      "name": "idp-email",
+      "description": "IdP User's Email Address",
+      "protocol": "saml",
+      "attributes": {
+        "include.in.token.scope": "true",
+        "display.on.consent.screen": "false",
+        "gui.order": "",
+        "consent.screen.text": ""
+      },
+      "protocolMappers": [
+        {
+          "id": "b44b3575-7f8a-4f85-9248-b7ec49dd8619",
+          "name": "email",
+          "protocol": "saml",
+          "protocolMapper": "saml-user-attribute-mapper",
+          "consentRequired": false,
+          "config": {
+            "user.attribute": "email",
+            "attribute.nameformat": "Basic",
+            "friendly.name": "email",
+            "attribute.name": "email"
+          }
+        }
+      ]
+    },
+    {
+      "id": "a202057f-1aa0-42ab-8065-db533025281b",
+      "name": "idp-first-name",
+      "description": "IdP User's First Name",
+      "protocol": "saml",
+      "attributes": {
+        "include.in.token.scope": "true",
+        "display.on.consent.screen": "false",
+        "gui.order": "",
+        "consent.screen.text": ""
+      },
+      "protocolMappers": [
+        {
+          "id": "c45b3574-7f8a-4f85-9248-b7ec49dd8619",
+          "name": "firstName",
+          "protocol": "saml",
+          "protocolMapper": "saml-user-attribute-mapper",
+          "consentRequired": false,
+          "config": {
+            "user.attribute": "firstName",
+            "attribute.nameformat": "Basic",
+            "friendly.name": "firstName",
+            "attribute.name": "firstName"
+          }
+        }
+      ]
+    },
+      {
+      "id": "d202057f-1aa0-42ab-8065-db533025281a",
+      "name": "idp-last-name",
+      "description": "IdP User's Last Name",
+      "protocol": "saml",
+      "attributes": {
+        "include.in.token.scope": "true",
+        "display.on.consent.screen": "false",
+        "gui.order": "",
+        "consent.screen.text": ""
+      },
+      "protocolMappers": [
+        {
+          "id": "d45b3575-3f8a-4f85-9248-b7ec49dd8619",
+          "name": "lastName",
+          "protocol": "saml",
+          "protocolMapper": "saml-user-attribute-mapper",
+          "consentRequired": false,
+          "config": {
+            "user.attribute": "lastName",
+            "attribute.nameformat": "Basic",
+            "friendly.name": "lastName",
+            "attribute.name": "lastName"
           }
         }
       ]

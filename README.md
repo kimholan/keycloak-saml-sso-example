@@ -101,4 +101,10 @@ credentials, enhancing both user experience and security.
 ## Improvements
 
 - [ ] Redirections to specific URLs using `RelayState`
-- [x] Mapping custom attributes from IdP into SP (for example, IdP could pass a `tenant-id` as a custom param to SP and the SP user needs to get mapped into the specified tenant ID)
+- [x] Disable 'first-broker-login' flow to remove an extra step to create a user in SP (first time) if the user does not
+  exist.
+- [x] Mapping attributes:
+    - [x] default user properties such as `firstName` and `lastName` from IdP into SP user record
+    - [x] default attribute such as `email` from IdP into SP as username
+    - [x] custom attributes from IdP into SP (for example, IdP could pass a `tenant-id` as a custom param to SP and the
+      SP user needs to get mapped into the specified tenant ID)
