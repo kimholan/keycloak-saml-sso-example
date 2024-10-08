@@ -87,13 +87,15 @@ Access the setup from http://localhost
 | Password: `admin`         | Password: `admin`        |
 | Realm: 'my-idp'           | Realm: 'my-sp'           |
 
-### Single Sign-on from IdP
+### From IdP
 
-- Open http://localhost/idp
-- Click 'Open SP App'
-- U: `idpuser`, P: `test`
-- Click Sign in
-- You are now logged into both apps
+| Single Sign-on from IdP                              | Single Sign-out from IdP                             |
+|------------------------------------------------------|------------------------------------------------------|
+| 1. Open [http://localhost/idp](http://localhost/idp) | 1. Open [http://localhost/idp](http://localhost/idp) |
+| 2. Click 'Open SP App'                               | 2. Click logout                                      |
+| 3. Enter Username: `idpuser`, Password: `test`       | 3. You should be logged out from both IdP and SP     |
+| 4. Click Sign in                                     |                                                      |
+| 5. You are now logged into both apps                 |                                                      |
 
 ### Single Sign-on from SP
 
@@ -106,12 +108,6 @@ Access the setup from http://localhost
 ### Single Sign-out from SP
 
 - Open http://localhost/sp
-- Click logout
-- You should be logged out from both IdP and SP
-
-### Single Sign-out from IdP
-
-- Open http://localhost/idp
 - Click logout
 - You should be logged out from both IdP and SP
 
