@@ -85,7 +85,7 @@ Access the setup from http://localhost
 | http://localhost/idp-auth | http://localhost/sp-auth |
 | Username: `admin`         | Username: `admin`        |
 | Password: `admin`         | Password: `admin`        |
-| Realm: 'my-idp'           | Realm: 'my-sp'           |
+| Realm: `my-idp`           | Realm: `my-sp`           |
 
 ### From IdP
 
