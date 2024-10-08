@@ -1,6 +1,6 @@
 # Keycloak SAML-based SSO Configuration Example
 
-## This example covers 2 kinds of SAML-based SSO flows
+### This example covers 2 kinds of SAML-based SSO flows
 
 - IdP Initiated Flow
 - Service Provider Initiated Flow
