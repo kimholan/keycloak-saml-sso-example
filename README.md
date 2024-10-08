@@ -50,7 +50,35 @@ log in. Here's how it works:
 Both flows facilitate Single Sign-On (SSO), allowing users to access multiple services without repeatedly entering
 credentials, enhancing both user experience and security.
 
-## Check the IdP and SP auth server configurations
+## Capabilities Covered
+
+### Simplified User Onboarding into SP
+
+- Removes the extra step for new users, allowing them to log in without entering their
+  username, first name, and last name during their first login.
+
+### Improved User Attribute Mapping
+
+- **User Properties Mapping**: Automatically transfers `firstName` and `lastName` from the Identity Provider (IdP) to
+  the Service Provider (SP) user profile.
+
+- **Email as Username**: Uses the user's email from the IdP as their username in the SP for easier access.
+
+- **Custom Attribute Support**:
+    - Maps additional information, such as `tenant-id`, to ensure users are linked to the correct
+      tenant.
+    - Allows the assignment of users to specific groups in the SP based on custom attributes from
+      the IdP.
+
+## Run the full setup
+
+```shell
+./start.sh
+```
+
+Access the setup from http://localhost
+
+### Check the IdP and SP auth server configurations
 
 ### IDP Keycloak
 
@@ -63,12 +91,6 @@ credentials, enhancing both user experience and security.
 - Open http://localhost/sp-auth
 - U: `admin`, P: `admin`
 - Select 'my-sp' realm
-
-## Run the full setup
-
-```shell
-./start.sh
-```
 
 ### Single Sign-on from IdP
 
@@ -98,14 +120,7 @@ credentials, enhancing both user experience and security.
 - Click logout
 - You should be logged out from both IdP and SP
 
-## Improvements
+## Potential Improvements
 
 - [ ] Redirections to specific URLs using `RelayState`
-- [x] Disable 'first-broker-login' flow to remove an extra step to create a user in SP (first time) if the user does not
-  exist.
-- [x] Mapping attributes:
-    - [x] default user properties such as `firstName` and `lastName` from IdP into SP user record
-    - [x] default attribute such as `email` from IdP into SP as username
-    - [x] custom attributes from IdP into SP (for example, IdP could pass a `tenant-id` as a custom param to SP and the
-      SP user needs to get mapped into the specified tenant ID)
-    - [x] map user to a group
+- [ ] Redirections to IdP/SP app on Single Sign-out
