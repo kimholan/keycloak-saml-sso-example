@@ -7,6 +7,22 @@
 
 ### IdP Initiated Flow
 
+```mermaid
+sequenceDiagram
+    actor User
+    participant IdP as SAML Identity Provider
+    participant SP as SAML Service Provider
+    participant Application as Service Provider's <br> OAuth2 Application
+    User ->> IdP: Logs in with credentials
+    IdP ->> User: Authenticates user and prepares SAML Response
+    IdP ->> SP: Sends SAML Response (with user info)
+    Note over SP: Maps user to an existing account<br>or dynamically creates a new account
+    SP ->> Application: Issues OAuth2 Authorization Code
+    SP ->> User: Redirects user to Application with <br>OAuth2 Authorization Code
+    User ->> Application: Accesses application using <br>OAuth2 Authorization Code
+
+```
+
 In the **IdP Initiated Flow**, the process begins at the Identity Provider (IdP). This flow is typically used when a
 user wants to access a service without having to navigate to the Service Provider (SP) first. Here's how it works:
 
@@ -27,6 +43,24 @@ user wants to access a service without having to navigate to the Service Provide
 - **Centralized Authentication**: Allows for centralized management of user identities and access controls.
 
 ### Service Provider Initiated Flow
+
+```mermaid
+sequenceDiagram
+    actor User
+    participant Application as Service Provider's <br> OAuth2 Application
+    participant SP as SAML Service Provider
+    participant IdP as SAML Identity Provider
+    User ->> Application: Requests access
+    Application ->> SP: Checks if the user is authenticated
+    SP ->> Application: User is not authenticated
+    Application ->> SP: Redirects user for authentication
+    SP ->> IdP: Redirects user for authentication<br>(AuthnRequest)
+    IdP ->> User: Prompts user to log in
+    User ->> IdP: Logs in with credentials
+    IdP ->> SP: Redirects authenticated user<br>(SAML Response)
+    Note over SP: Maps user to an existing account<br>or dynamically creates a new account
+    SP ->> User: Redirects authenticated user<br>(OAuth2 Authorization Code)
+```
 
 In the **Service Provider Initiated Flow**, the user begins at the Service Provider (SP) and is redirected to the
 Identity Provider (IdP) for authentication. This flow is common when users are accessing a service that requires them to
