@@ -5,7 +5,7 @@
 - IdP Initiated Flow
 - Service Provider Initiated Flow
 
-## IdP Initiated Flow
+### IdP Initiated Flow
 
 In the **IdP Initiated Flow**, the process begins at the Identity Provider (IdP). This flow is typically used when a
 user wants to access a service without having to navigate to the Service Provider (SP) first. Here's how it works:
@@ -26,7 +26,7 @@ user wants to access a service without having to navigate to the Service Provide
 - **User Experience**: Simplifies the login process for users who often access the IdP directly.
 - **Centralized Authentication**: Allows for centralized management of user identities and access controls.
 
-## Service Provider Initiated Flow
+### Service Provider Initiated Flow
 
 In the **Service Provider Initiated Flow**, the user begins at the Service Provider (SP) and is redirected to the
 Identity Provider (IdP) for authentication. This flow is common when users are accessing a service that requires them to
