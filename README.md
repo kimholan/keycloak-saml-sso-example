@@ -80,17 +80,12 @@ Access the setup from http://localhost
 
 ### Check the IdP and SP auth server configurations
 
-### IDP Keycloak
-
-- Open http://localhost/idp-auth
-- U: `admin`, P: `admin`
-- Select 'my-idp' realm
-
-### SP Keycloak
-
-- Open http://localhost/sp-auth
-- U: `admin`, P: `admin`
-- Select 'my-sp' realm
+| IDP Keycloak              | SP Keycloak              |
+|---------------------------|--------------------------|
+| http://localhost/idp-auth | http://localhost/sp-auth |
+| Username: `admin`         | Username: `admin`        |
+| Password: `admin`         | Password: `admin`        |
+| Realm: 'my-idp'           | Realm: 'my-sp'           |
 
 ### Single Sign-on from IdP
 
