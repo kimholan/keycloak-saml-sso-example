@@ -92,18 +92,22 @@ credentials, enhancing both user experience and security.
 
 ## Capabilities Covered
 
+### Login via IdP
+
+### Login via SP
+
+### Create a user in SP using the IdP user data after authentication
+
 ### Simplified User Onboarding into SP
 
-- Removes the extra step for new users, allowing them to log in without entering their
+- Removes the extra step for new users, allowing them to log in without asking them to enter their
   username, first name, and last name during their first login.
 
-### Improved User Attribute Mapping
+### User Attribute Mapping
 
 - **User Properties Mapping**: Automatically transfers `firstName` and `lastName` from the Identity Provider (IdP) to
   the Service Provider (SP) user profile.
-
 - **Email as Username**: Uses the user's email from the IdP as their username in the SP for easier access.
-
 - **Custom Attribute Support**:
     - Maps additional information, such as `tenant-id`, to ensure users are linked to the correct
       tenant.
