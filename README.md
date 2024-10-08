@@ -92,24 +92,20 @@ Access the setup from http://localhost
 | Single Sign-on from IdP                              | Single Sign-out from IdP                             |
 |------------------------------------------------------|------------------------------------------------------|
 | 1. Open [http://localhost/idp](http://localhost/idp) | 1. Open [http://localhost/idp](http://localhost/idp) |
-| 2. Click 'Open SP App'                               | 2. Click logout                                      |
+| 2. Click `Open SP App`                               | 2. Click `Logout`                                    |
 | 3. Enter Username: `idpuser`, Password: `test`       | 3. You should be logged out from both IdP and SP     |
-| 4. Click Sign in                                     |                                                      |
+| 4. Click `Sign in`                                   |                                                      |
 | 5. You are now logged into both apps                 |                                                      |
 
-### Single Sign-on from SP
+### From SP
 
-- Open http://localhost/sp
-- Click on 'SSO with IdP via SAML'
-- U: `idpuser`, P: `test`
-- Click Sign in
-- You are now logged into both apps
-
-### Single Sign-out from SP
-
-- Open http://localhost/sp
-- Click logout
-- You should be logged out from both IdP and SP
+| Single Sign-on from SP                             | Single Sign-out from SP                            |
+|----------------------------------------------------|----------------------------------------------------|
+| 1. Open [http://localhost/sp](http://localhost/sp) | 1. Open [http://localhost/sp](http://localhost/sp) |
+| 2. Click on `SSO with IdP via SAML`                | 2. Click `Logout`                                  |
+| 3. Enter Username: `idpuser`, Password: `test`     | 3. You should be logged out from both IdP and SP   |
+| 4. Click `Sign in`                                 |                                                    |
+| 5. You are now logged into both apps               |                                                    |
 
 ## Potential Improvements
 
