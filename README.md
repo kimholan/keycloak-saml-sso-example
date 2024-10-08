@@ -1,5 +1,11 @@
 # Keycloak SAML-based SSO Demo
 
+The primary goal of this project is to establish SAML authentication system using Keycloak. This will involve
+configuring two Keycloak instances: one as the Identity Provider (IdP) and the other as the Service Provider (SP).
+Additionally, we will have a demo application that will serve as a client secured by the Keycloak SP, ensuring that
+all authentication workflows are exclusively handled through SAML. This comprehensive setup will demonstrate seamless
+integration and secure authentication flows between the IdP, SP, and the demo application.
+
 ### This demo covers 2 kinds of SAML-based SSO flows
 
 - IdP Initiated Flow
