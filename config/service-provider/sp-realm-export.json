@@ -1421,7 +1421,7 @@
     "auth": "",
     "port": "1025",
     "replyTo": "no-reply@serviceprovider.org",
-    "host": "maildev",
+    "host": "mailbox",
     "from": "no-reply@serviceprovider.org",
     "fromDisplayName": "Service Provider App",
     "envelopeFrom": "",

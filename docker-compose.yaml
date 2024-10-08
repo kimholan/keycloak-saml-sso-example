@@ -85,15 +85,19 @@ services:
       retries: 300
     restart: on-failure
 
-  # Setup a dummy SMTP Server + Web Interface for viewing and testing emails during development.
-  maildev:
-    container_name: maildev
-    image: maildev/maildev:2.1.0
-    environment:
-      - MAILDEV_BASE_PATHNAME=/mailbox
+  # set up a dummy mailbox with a web interface for accessing emails during development.
+  mailbox:
+    container_name: mailbox
+    image: axllent/mailpit
     ports:
-      - "9060:1080"
+      - "8025:8025"
       - "1025:1025"
+    environment:
+#      MP_MAX_MESSAGES: 5000
+#      MP_DATABASE: /data/mailpit.db
+      MP_WEBROOT: /mailbox
+      MP_SMTP_AUTH_ACCEPT_ANY: 1
+      MP_SMTP_AUTH_ALLOW_INSECURE: 1
     restart: unless-stopped
 
 volumes:
