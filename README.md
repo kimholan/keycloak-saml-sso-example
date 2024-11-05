@@ -151,6 +151,11 @@ Access the setup from http://localhost
 | 4. Click `Sign in`                                 |                                                    |
 | 5. You are now logged into both apps               |                                                    |
 
+
+## [Link to the video demo](https://www.youtube.com/watch?v=aUVNjNNhQik)
+
+https://github.com/user-attachments/assets/b743d71f-f34b-4ab3-b38e-c35fb4168ad5
+
 ## Potential Improvements
 
 - [ ] Redirections to specific URLs using `RelayState`
