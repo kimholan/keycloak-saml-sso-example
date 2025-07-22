@@ -1,3 +1,5 @@
+import Keycloak from './keycloak.js'
+
 // noinspection JSJQueryEfficiency,JSUnresolvedReference,DuplicatedCode
 
 function getKCHost() {
@@ -62,3 +64,7 @@ function parseJWT(token) {
     const decodedPayload = JSON.parse(atob(payload.replace(/-/g, '+').replace(/_/g, '/')));
     return decodedPayload;
 }
+
+$(document).ready(function () {
+    getKCHost();
+});
